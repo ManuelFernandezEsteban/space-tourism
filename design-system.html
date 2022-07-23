@@ -16,12 +16,12 @@
 
 <body>
 
-    <div class="container serif">
+    <div class="container serif flow">
         <h1>Desing system</h1>
 
 
         <section id="colors">
-            <h2 class="text-white"><span class="">01</span>colors</h2>
+            <h2 class="numbered-title"><span>01 </span>Colors</h2>
             <div class="container flex">
                 <div>
                     <div class="box-padding bg-dark text-white">
@@ -31,7 +31,7 @@
                     <p class="text-white"><span class="text-accent">HSL</span>  230º, 35%, 7%</p>
                 </div>
                 <div>
-                    <div class="box-padding bg-accent text dark">
+                    <div class="box-padding bg-accent text-dark">
                         #0b0d17
                     </div>
                     <p class="text-white"><span class="text-accent">RGB</span> 11, 13, 23</p>
@@ -47,11 +47,11 @@
             </div>
         </section>
         <section id="typography">
-            <h2>
-                <span class="text-accent">02 </span>Typograhy
+            <h2 class="numbered-title">
+                <span>02 </span>Typograhy
             </h2>
             <div class="flex">
-                <div style="flex-basis: 100%;">
+                <div class="flow" style="flex-basis: 100%;">
                     <div>
                         <p class="text-accent ff-sans-condensed fs-300">Heading 1 - Bellefair Regular - 150px</p>
                         <p class="ff-serif fs-900 uppercase">Earth</p>
@@ -70,28 +70,72 @@
                     </div>
                     <div> 
                         <p class="text-accent ff-sans-condensed fs-300">Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character Space</p>
-                        <p class="ff-condensed fs-500 uppercase">So, you want to travel to space</p>
+                        <p class="ff-sans-condensed fs-500 uppercase letter-spacing-1 text-accent">So, you want to travel to space</p>
                     </div>
                 </div>
-                <div  style="flex-basis: 100%">
+                <div class="flow" style="flex-basis: 100%">
                     <div> 
                         <p class="text-accent ff-sans-condensed fs-300">Subheading 1 - Bellefair Regular - 28px</p>
                         <p class="ff-serif fs-500 uppercase">384,400 km</p>
                     </div>
                     <div> 
                         <p class="text-accent ff-sans-condensed fs-300">Subheading 2 - Barlow Condensed Regular - 14px - 2.35 Character Space</p>
-                        <p class="ff-sans-condensed fs-200 uppercase">Avg. Distance</p>
+                        <p class="ff-sans-condensed fs-200 uppercase letter-spacing-3">Avg. Distance</p>
                     </div>
                     <div> 
                         <p class="text-accent ff-sans-condensed fs-300">Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space</p>
-                        <p class="ff-sans-condensed fs-300 uppercase">Europa</p>
+                        <p class="ff-sans-condensed fs-300 uppercaseletter-spacing-2">Europa</p>
                     </div>
                     <div> 
                         <p class="text-accent ff-sans-normal fs-200">Body Text</p>
-                        <p class="ff-sans-normal fs-200">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
+                        <p class="fs-200">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. </p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="flow" id="interactive-elements" style="margin-bottom: 50vh;">
+            <h2 class="numbered-title"><span>03</span> Interactive elements</h2>
+            <!--navigation-->
+            <div class="flex">
+                <nav>
+                    <ul class="primary-navigation flex underline-indicators">
+                        <li class="active"><a class="text-white uppercase letter-spacing-2" href="#"><span>01</span> Active</a></li>
+                        <li><a class="text-white uppercase letter-spacing-2" href="#"><span>02</span> Hovered</a></li>
+                        <li><a class="text-white uppercase letter-spacing-2" href="#"><span>03</span> Idle</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="flex">
+                <div>
+                    <!--explore button-->
+
+                    <a href="#" class="large-button bg-white text-dark ff-serif letter-spacing-2 uppercase fs-600">Explore</a>
+                </div>
+
+                <div>
+                    <!--tabs-->
+                    <div class="tab-list underline-indicators flex">
+                        <button 
+                            class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+                            Moon
+                        </button>
+                        <button
+                            class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+                            Mars
+                        </button>
+                        <button 
+                            class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+                            Europa
+                        </button>
+                    </div>
+                    <!--dots-->
+                    <!--numbers-->
+                </div>
+
+            </div>
+
         </section>
 </body>
 
