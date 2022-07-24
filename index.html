@@ -25,10 +25,14 @@
       <!--logo-->
       <img src="./assets/shared/logo.svg" alt="space tourism logo">
     </div>
-    <!--navigation
+    <!--navigation-->
+
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+      <span aria-expanded="false" class="sr-only">menu</span>
+    </button>
     <nav>
-      <ul class="primary-navigation flex underline-indicators">
-        <li class="active">
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation flex underline-indicators">
+        <li>
           <a class="text-white uppercase letter-spacing-2 ff-sans-condensed" href="index.html">
             <span>00</span> Home
           </a>
@@ -49,7 +53,7 @@
           </a>
         </li>
       </ul>
-    </nav>-->
+    </nav>
   </header>
 
   <div class="grid-container">
@@ -70,6 +74,9 @@
 
     
   </div>
+
+
+  <script src="index.js"></script>
 </body>
 
 </html>
