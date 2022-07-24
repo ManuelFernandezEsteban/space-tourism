@@ -30,6 +30,8 @@ body {
   font-size: 1.125rem;
   background-color: #0c0e18;
   color: white;
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 img, picture {
@@ -52,13 +54,47 @@ input, button, textarea, select {
 }
 
 .flow > *:not(:first-child) {
-  margin-top: 4rem;
+  margin-top: 3rem;
+}
+
+.d-block {
+  display: block;
 }
 
 .container {
-  padding: 0 2em;
-  margin: 0 auto;
+  padding-inline: 2em;
+  margin-inline: auto;
   max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  text-align: center;
+  place-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 50rem) {
+  .grid-container {
+    grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0px, 40rem)) minmax(2em, 1fr);
+    gap: 2rem;
+    text-align: left;
+  }
+  .grid-container *:first-child {
+    grid-column: 2;
+    outline: 1px solid red;
+  }
+  .grid-container *:last-child {
+    grid-column: 3;
+    outline: 1px solid yellow;
+  }
+}
+
+@media (min-width: 45rem) {
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
+  }
 }
 
 .box {
@@ -197,9 +233,10 @@ input, button, textarea, select {
   aspect-ratio: 1;
   border-radius: 50%;
   margin: 0 auto;
-  display: flex;
+  display: inline-grid;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
 }
 .large-button::after {
   content: "";
@@ -231,15 +268,82 @@ input, button, textarea, select {
   margin-right: 0.5em;
 }
 
-.underline-indicators li {
+.underline-indicators * {
+  cursor: pointer;
   padding: 1rem 0;
+  border: none;
   border-bottom: 0.2rem solid white;
 }
-.underline-indicators li:hover, .underline-indicators li:focus {
-  border-color: rgba(255, 255, 255, 0.5);
+.underline-indicators *:hover, .underline-indicators *:focus {
+  border-color: rgba(255, 255, 255, 0.25);
 }
 .underline-indicators .active {
   border-color: white;
+}
+.underline-indicators [aria-selected=true] {
+  border-color: white;
+}
+
+.tab-list {
+  gap: 2rem;
+}
+
+.dot-indicators * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.dot-indicators *:hover, .dot-indicators *:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.dot-indicators [aria-selected=true] {
+  background-color: white;
+}
+
+.numbers-indicators * {
+  cursor: pointer;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.numbers-indicators button:hover, .numbers-indicators button:focus {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.numbers-indicators span {
+  background-color: transparent;
+}
+.numbers-indicators [aria-selected=true] {
+  background-color: white;
+}
+.numbers-indicators [aria-selected=true] span {
+  color: #0c0e18;
+}
+
+/* Page specific*/
+body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+/*home*/
+.home {
+  background-image: url(./assets/home/background-home-mobile.jpg);
+}
+@media (min-width: 35rem) {
+  .home {
+    background-image: url(./assets/home/background-home-tablet.jpg);
+    background-position: center center;
+  }
+}
+@media (min-width: 50rem) {
+  .home {
+    background-image: url(./assets/home/background-home-desktop.jpg);
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
