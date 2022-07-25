@@ -21,7 +21,7 @@
 <body class="home">
 
   <header class="primary-header flex">
-    <div>
+    <div class="logo">
       <!--logo-->
       <img src="./assets/shared/logo.svg" alt="space tourism logo">
     </div>
@@ -32,8 +32,8 @@
     </button>
     <nav>
       <ul id="primary-navigation" data-visible="false" class="primary-navigation flex underline-indicators">
-        <li>
-          <a class="text-white uppercase letter-spacing-2 ff-sans-condensed" href="index.html">
+        <li class="active">
+          <a class="text-white uppercase letter-spacing-2 ff-sans-condensed " href="index.html">
             <span>00</span> Home
           </a>
         </li>
@@ -55,25 +55,27 @@
       </ul>
     </nav>
   </header>
+  <main id="main" class="grid-container">
+    
+      <div>
+        <h1 class="text-accent fs-500 ff-sans-condensed uppercase letter-spacing-1"> So, you want to travel to
+          <span class="fs-900 ff-serif text-white d-block"> Space</span>
+        </h1>
+        <p>
+          Let’s face it; if you want to go to space, you might as well genuinely go to
+          outer space and not hover kind of on the edge of it. Well sit back, and relax
+          because we’ll give you a truly out of this world experience!
+        </p>
+      </div>
+      <div>
+        <a href="#" class="large-button bg-white text-dark ff-serif letter-spacing-2 uppercase">Explore</a>
+      </div>
 
-  <div class="grid-container">
-    <div>
-      <h1 class="text-accent fs-500 ff-sans-condensed uppercase letter-spacing-1"> So, you want to travel to
-      <span class="fs-900 ff-serif text-white d-block"> Space</span>
-    </h1>
-    <p>
-      Let’s face it; if you want to go to space, you might as well genuinely go to
-      outer space and not hover kind of on the edge of it. Well sit back, and relax
-      because we’ll give you a truly out of this world experience!
-    </p>
-    </div>
-    <div>
-      <a href="#" class="large-button bg-white text-dark ff-serif letter-spacing-2 uppercase">Explore</a>
-    </div>
 
 
     
-  </div>
+  </main>
+
 
 
   <script src="index.js"></script>
