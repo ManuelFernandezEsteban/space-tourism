@@ -340,7 +340,7 @@ nav
 
 .underline-indicators
     
-    li
+    li,button
         cursor: pointer
         padding: 1rem 0
         border: none
@@ -389,6 +389,29 @@ nav
         background-color: hsl(0 0% 100% /1)
         span
             color: hsl( $clr-dark )
+
+
+/* destination layout*/
+
+.grid-container--destination
+    gap: 2rem
+    grid-template-areas: 'title' 'image' 'tabs' 'content'
+    img
+        grid-area: image
+        max-width: 60%
+    .tab-list
+        grid-area: tabs
+    .destination-info
+        grid-area: content
+.grid-container
+    .numbered-title
+        grid-area: title
+
+.destination-meta
+    flex-direction: column
+    border-top: 1px solid hsl(0 0% 100% / .1 )
+    padding-top: 2.5rem
+    margin-top: 2.5rem
 
 /* Page specific*/
 
