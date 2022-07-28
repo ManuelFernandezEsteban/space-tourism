@@ -27,7 +27,7 @@ p {
 body {
   min-height: 100vh;
   font-family: "Barlow", sans-serif;
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   background-color: #0c0e18;
   color: white;
   display: grid;
@@ -43,6 +43,10 @@ input, button, textarea, select {
   font: inherit;
 }
 
+.flow--space-small {
+  margin-top: 1rem;
+}
+
 .flex {
   display: flex;
   gap: 1rem;
@@ -54,7 +58,7 @@ input, button, textarea, select {
 }
 
 .flow > *:not(:first-child) {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .d-block {
@@ -173,19 +177,19 @@ input, button, textarea, select {
 }
 
 .fs-900 {
-  font-size: 5rem;
+  font-size: 9.375rem;
 }
 
 .fs-800 {
-  font-size: 3.5rem;
+  font-size: 6.25rem;
 }
 
 .fs-700 {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
 }
 
 .fs-600 {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .fs-500 {
@@ -193,7 +197,7 @@ input, button, textarea, select {
 }
 
 .fs-400 {
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
 }
 
 .fs-300 {
@@ -373,9 +377,10 @@ nav {
 }
 .underline-indicators li, .underline-indicators button {
   cursor: pointer;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   border: none;
   border-bottom: 0.2rem solid rgba(255, 255, 255, 0.25);
+  background-color: transparent;
 }
 .underline-indicators li:hover, .underline-indicators li:focus, .underline-indicators button:hover, .underline-indicators button:focus {
   border-color: white;
@@ -483,6 +488,45 @@ nav {
   }
 }
 
+/*crew layout*/
+.grid-container--crew {
+  grid-template-areas: "title" "image" "tabs" "content";
+}
+.grid-container--crew img {
+  grid-area: image;
+  max-width: 60%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.grid-container--crew .dot-indicators {
+  grid-area: tabs;
+}
+.grid-container--crew .crew-details {
+  grid-area: content;
+}
+.grid-container--crew .crew-details h2 {
+  opacity: 0.5;
+}
+@media (min-width: 35em) {
+  .grid-container--crew {
+    grid-template-areas: "title" "content" "tabs" "image";
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 45em) {
+  .grid-container--crew {
+    grid-template-areas: ". title title ." ". content image ." ". tabs image .";
+    justify-items: start;
+    align-content: start;
+  }
+  .grid-container--crew .dot-indicators {
+    justify-self: start;
+  }
+  .grid-container--crew img {
+    width: 90%;
+    align-self: end;
+  }
+}
+
 /* Page specific*/
 body {
   background-size: cover;
@@ -502,6 +546,37 @@ body {
 @media (min-width: 50rem) {
   .home {
     background-image: url(./assets/home/background-home-desktop.jpg);
+  }
+}
+
+/*destination*/
+.destination {
+  background-image: url(./assets/destination/background-destination-mobile.jpg);
+}
+@media (min-width: 35rem) {
+  .destination {
+    background-image: url(./assets/destination/background-destination-tablet.jpg);
+    background-position: center center;
+  }
+}
+@media (min-width: 50rem) {
+  .destination {
+    background-image: url(./assets/destination/background-destination-desktop.jpg);
+  }
+}
+
+.crew {
+  background-image: url(./assets/crew/background-crew-mobile.jpg);
+}
+@media (min-width: 35rem) {
+  .crew {
+    background-image: url(./assets/crew/background-crew-tablet.jpg);
+    background-position: center center;
+  }
+}
+@media (min-width: 50rem) {
+  .crew {
+    background-image: url(./assets/crew/background-crew-desktop.jpg);
   }
 }
 
