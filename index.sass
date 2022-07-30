@@ -390,6 +390,7 @@ nav
     img
         grid-area: image
         max-width: 60%
+        align-self: start
     .tab-list
         grid-area: tabs
     .destination-info
@@ -443,6 +444,7 @@ nav
         grid-template-areas: 'title' 'content' 'tabs' 'image'  
         padding-bottom: 0
     @media (min-width: 45em)
+        grid-template-columns: minmax(2em,1fr) minmax(0px,40rem) minmax(0px,40rem) minmax(2em,1fr)
         grid-template-areas: '. title title .' '. content image .' '. tabs image .'
         justify-items: start
         align-content: start
@@ -450,7 +452,8 @@ nav
             justify-self: start
         img
             width: 90%
-            align-self: end
+            justify-self: end
+            grid-column: span 2
 /* Page specific*/
 
 body
@@ -464,9 +467,11 @@ body
 
 .home    
     background-image: url(./assets/home/background-home-mobile.jpg)
+    background-repeat: no-repeat
     @media ( min-width: 35rem )
         background-image: url(./assets/home/background-home-tablet.jpg)
         background-position: center center
+        
     @media ( min-width: 50rem )
         background-image: url(./assets/home/background-home-desktop.jpg)
 
@@ -476,6 +481,7 @@ body
 
 .destination    
     background-image: url(./assets/destination/background-destination-mobile.jpg)
+    background-repeat: no-repeat
     @media ( min-width: 35rem )
         background-image: url(./assets/destination/background-destination-tablet.jpg)
         background-position: center center
@@ -484,6 +490,7 @@ body
 
 .crew    
     background-image: url(./assets/crew/background-crew-mobile.jpg)
+    background-repeat: no-repeat
     @media ( min-width: 35rem )
         background-image: url(./assets/crew/background-crew-tablet.jpg)
         background-position: center center
