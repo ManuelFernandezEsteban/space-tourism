@@ -58,29 +58,33 @@
   <main id="main" class="grid-container grid-container--destination">
     <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
 
-    <img  src="./assets/destination/image-moon.png" alt="the moon">
-    <img class="sr-only" src="./assets/destination/image-mars.png" alt="mars">
-    <img class="sr-only" src="./assets/destination/image-europa.png" alt="eurpa">
-    <img class="sr-only" src="./assets/destination/image-titan.png" alt="titan">
+    <img id="moon-image" src="./assets/destination/image-moon.png" alt="the moon">
+    <img id="mars-image" class="sr-only" src="./assets/destination/image-mars.png" alt="mars">
+    <img id="europa-image" class="sr-only" src="./assets/destination/image-europa.png" alt="europa">
+    <img id="titan-image" class="sr-only" src="./assets/destination/image-titan.png" alt="titan">
 
     <div class="tab-list underline-indicators flex">
-      <button aria-selected="true" tabindex="0" aria-controls="moon-tab" class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+      <button aria-selected="true" tabindex="0" aria-controls="moon-tab" data-image="moon-image"
+        class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
         Moon
       </button>
-      <button aria-selected="false" tabindex="-1" aria-controls="mars-tab" class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+      <button aria-selected="false" tabindex="-1" aria-controls="mars-tab" data-image="mars-image"
+        class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
         Mars
       </button>
-      <button aria-selected="false" tabindex="-1" aria-controls="europa-tab" class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+      <button aria-selected="false" tabindex="-1" aria-controls="europa-tab" data-image="europa-image"
+        class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
         Europa
       </button>
-      <button aria-selected="false" tabindex="-1" aria-controls="titan-tab" class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
+      <button aria-selected="false" tabindex="-1" aria-controls="titan-tab" data-image="titan-image"
+        class="uppercase text-accent letter-spacing-2 bg-dark ff-sans-condesed">
         Titan
       </button>
     </div>
 
     <!--moon-->
 
-    <article class="destination-info flow" id="moon-tab" tabindex="0">
+    <article class="destination-info flow" id="moon-tab" tabindex="0" role="tabpanel">
       <h2 class="fs-800 ff-serif uppercase text-white">Moon</h2>
 
       <p class="text-accent">
@@ -100,7 +104,7 @@
       </div>
     </article>
     <!--mars-->
-    <article hidden class="destination-info flow" id="mars-tab" tabindex="0">
+    <article hidden class="destination-info flow" id="mars-tab" tabindex="0" role="tabpanel">
       <h2 class="fs-800 ff-serif uppercase text-white">Mars</h2>
 
       <p class="text-accent">
@@ -120,7 +124,7 @@
       </div>
     </article>
     <!--europa-->
-    <article hidden class="destination-info flow" id="europa-tab" tabindex="0">
+    <article hidden class="destination-info flow" id="europa-tab" tabindex="0" role="tabpanel">
       <h2 class="fs-800 ff-serif uppercase text-white">Europa</h2>
 
       <p class="text-accent">
@@ -141,7 +145,7 @@
       </div>
     </article>
     <!--titan-->
-    <article hidden class="destination-info flow" id="titan-tab" tabindex="0">
+    <article hidden class="destination-info flow" id="titan-tab" tabindex="0" role="tabpanel">
       <h2 class="fs-800 ff-serif uppercase text-white">Titan</h2>
 
       <p class="text-accent">

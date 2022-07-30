@@ -31,3 +31,30 @@ tabList.addEventListener('keydown',(e)=>{
     tabs[tabFocus].setAttribute('tabindex',0);
     tabs[tabFocus].focus();
 })
+
+tabs.forEach((tab)=>{
+    tab.addEventListener('click',(e)=>{
+        const targetButton = e.target;
+        const targetPanel = targetButton.getAttribute('aria-controls');
+        const mainPanel = document.querySelector('#main');
+        const targetImage = targetButton.getAttribute('data-image');
+        const tabContainer = targetButton.parentNode;
+        tabContainer.querySelector('[aria-selected=true]').setAttribute('aria-selected',false);
+
+        targetButton.setAttribute('aria-selected',true)
+
+        mainPanel.querySelectorAll('[role="tabpanel"]').forEach((article)=>{
+            article.setAttribute('hidden',true);
+        })
+
+        mainPanel.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
+
+        mainPanel.querySelectorAll('img').forEach((image)=>{
+            image.classList.add('sr-only');
+        })
+        mainPanel.querySelector([`#${targetImage}`]).classList.remove('sr-only');
+
+        //console.log(mainPanel);
+    })
+})
+
