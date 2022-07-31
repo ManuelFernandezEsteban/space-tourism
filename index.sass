@@ -65,7 +65,7 @@ img, picture
 input,button,textarea,select
     font: inherit
 
-.flow--space-small
+.flow--space-small > *:not(:first-child)
     margin-top: 1rem
 .flex
     display: flex
@@ -76,7 +76,8 @@ input,button,textarea,select
     gap: 1rem
 .flow > *:not(:first-child)
     margin-top: 2.5rem
-
+    @media (min-width: 50rem)
+        margin-top: 0.5rem
 .d-block
     display: block
    
@@ -374,7 +375,9 @@ nav
             
     span        
         background-color: transparent
-    
+        width: 100%
+        height: 100%
+        border-radius: 50%
 
     [aria-selected="true"]
         background-color: hsl(0 0% 100% /1)
@@ -436,6 +439,7 @@ nav
         border-bottom: 1px solid hsl(0 0% 100% / .1)
     .dot-indicators
         grid-area: tabs
+        
     .crew-details
         grid-area: content
         h2
@@ -450,15 +454,47 @@ nav
         align-content: start
         .dot-indicators
             justify-self: start
+            align-self: start
         img
             width: 90%
+            justify-self: center
+            grid-column: span 2
+
+.grid-container--technology
+    grid-template-areas: 'title' 'image' 'tabs' 'content'
+    img
+        grid-area: image
+        max-width: 60%
+    .numbers-indicators
+        grid-area: tabs
+    .crew-details
+        grid-area: content
+    
+    @media (min-width: 35em)    
+        grid-template-areas: 'title' 'image' 'tabs' 'content'   
+        padding-bottom: 0
+    @media (min-width: 45em)
+        grid-template-columns: minmax(2em,1fr) minmax(0px,10rem) minmax(0px,30rem) minmax(0px,50rem) minmax(2em,1fr)
+        grid-template-areas: '. title title . .' '. tabs content image .' 
+        .numbers-indicators
+            flex-direction: column
+            justify-self: start
+            align-self: center
+
+        img
+            width: 100%
             justify-self: end
             grid-column: span 2
+            align-self: start
+        .crew-details
+            align-self: center
 /* Page specific*/
 
 body
     background-size: cover
     background-position: bottom center
+    width: 100vw
+
 
 
 /*home*/
@@ -485,7 +521,7 @@ body
     @media ( min-width: 35rem )
         background-image: url(./assets/destination/background-destination-tablet.jpg)
         background-position: center center
-    @media ( min-width: 50rem )
+    @media ( min-width: 45rem )
         background-image: url(./assets/destination/background-destination-desktop.jpg)
 
 .crew    
@@ -494,5 +530,14 @@ body
     @media ( min-width: 35rem )
         background-image: url(./assets/crew/background-crew-tablet.jpg)
         background-position: center center
-    @media ( min-width: 50rem )
+    @media ( min-width: 45rem )
         background-image: url(./assets/crew/background-crew-desktop.jpg)
+
+.technology    
+    background-image: url(./assets/technology/background-technology-mobile.jpg)
+    background-repeat: no-repeat
+    @media ( min-width: 35rem )
+        background-image: url(./assets/technology/background-technology-tablet.jpg)
+        background-position: center center
+    @media ( min-width: 45rem )
+        background-image: url(./assets/technology/background-technology-desktop.jpg)

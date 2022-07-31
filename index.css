@@ -43,7 +43,7 @@ input, button, textarea, select {
   font: inherit;
 }
 
-.flow--space-small {
+.flow--space-small > *:not(:first-child) {
   margin-top: 1rem;
 }
 
@@ -59,6 +59,11 @@ input, button, textarea, select {
 
 .flow > *:not(:first-child) {
   margin-top: 2.5rem;
+}
+@media (min-width: 50rem) {
+  .flow > *:not(:first-child) {
+    margin-top: 0.5rem;
+  }
 }
 
 .d-block {
@@ -424,6 +429,9 @@ nav {
 }
 .numbers-indicators span {
   background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .numbers-indicators [aria-selected=true] {
   background-color: white;
@@ -522,11 +530,52 @@ nav {
   }
   .grid-container--crew .dot-indicators {
     justify-self: start;
+    align-self: start;
   }
   .grid-container--crew img {
     width: 90%;
+    justify-self: center;
+    grid-column: span 2;
+  }
+}
+
+.grid-container--technology {
+  grid-template-areas: "title" "image" "tabs" "content";
+}
+.grid-container--technology img {
+  grid-area: image;
+  max-width: 60%;
+}
+.grid-container--technology .numbers-indicators {
+  grid-area: tabs;
+}
+.grid-container--technology .crew-details {
+  grid-area: content;
+}
+@media (min-width: 35em) {
+  .grid-container--technology {
+    grid-template-areas: "title" "image" "tabs" "content";
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 45em) {
+  .grid-container--technology {
+    grid-template-columns: minmax(2em, 1fr) minmax(0px, 10rem) minmax(0px, 30rem) minmax(0px, 50rem) minmax(2em, 1fr);
+    grid-template-areas: ". title title . ." ". tabs content image .";
+  }
+  .grid-container--technology .numbers-indicators {
+    flex-direction: column;
+    justify-self: start;
+    align-self: center;
+  }
+  .grid-container--technology img {
+    width: 100%;
     justify-self: end;
     grid-column: span 2;
+    align-self: start;
+  }
+  .grid-container--technology .crew-details {
+    align-self: center;
   }
 }
 
@@ -534,6 +583,7 @@ nav {
 body {
   background-size: cover;
   background-position: bottom center;
+  width: 100vw;
 }
 
 /*home*/
@@ -564,7 +614,7 @@ body {
     background-position: center center;
   }
 }
-@media (min-width: 50rem) {
+@media (min-width: 45rem) {
   .destination {
     background-image: url(./assets/destination/background-destination-desktop.jpg);
   }
@@ -580,9 +630,25 @@ body {
     background-position: center center;
   }
 }
-@media (min-width: 50rem) {
+@media (min-width: 45rem) {
   .crew {
     background-image: url(./assets/crew/background-crew-desktop.jpg);
+  }
+}
+
+.technology {
+  background-image: url(./assets/technology/background-technology-mobile.jpg);
+  background-repeat: no-repeat;
+}
+@media (min-width: 35rem) {
+  .technology {
+    background-image: url(./assets/technology/background-technology-tablet.jpg);
+    background-position: center center;
+  }
+}
+@media (min-width: 45rem) {
+  .technology {
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
   }
 }
 
